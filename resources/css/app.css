@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+:root {
+    --color-primary: #0f172a;
+    /* Midnight Blue */
+    --color-secondary: #f59e0b;
+    /* Amber Gold */
+    --color-info: #3b82f6;
+    /* Bright Blue for actions */
+    --color-bg: #f8fafc;
+    /* Slate 50 */
+    --color-text: #1e293b;
+    /* Slate 800 */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+
+
+/* ----- Hero carousel: full viewport height (responsive) ----- */
+/* Default for small screens: keep 100vh to avoid huge vertical scroll on mobile */
+.hero-section {
+    height: 100vh;
+}
+
+/* On medium+ screens double the height (2x) as requested */
+@media (min-width: 768px) {
+    .hero-section {
+        height: 85vh;
+    }
+
+    .hero-section .carousel-inner,
+    .hero-section .carousel-item {
+        height: 100%;
+    }
+
+    .hero-section .carousel-item img,
+    .hero-section img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Keep fallback for very large screens if needed */
+@media (min-width: 1400px) {
+    .hero-section {
+        height: 85vh;
+    }
+}
